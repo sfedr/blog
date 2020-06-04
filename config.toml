@@ -19,7 +19,7 @@ staticDir = "static"
 
 [params]
   avatar = "/img/avatar.jpeg"
-  favicon = "/img/favicon.ico"
+  favicon = "img/favicon.ico"
   email = "sfedrv@gmail.com"
   [params.contact]
   	linkedin = "https://www.linkedin.com/in/sfedov/"
