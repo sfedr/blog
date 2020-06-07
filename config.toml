@@ -12,6 +12,7 @@ enableRobotsTXT = true
 DefaultContentLanguage = "en"
 title = "Sergey Fedorov · Home Page"
 staticDir = "static"
+googleAnalytics = "UA-168653586-1"
 
 [permalinks]
   fixed = ":title/"
