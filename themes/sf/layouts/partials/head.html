@@ -1,0 +1,37 @@
+<head>
+{{with .title}}
+    <title>{{.}}</title>
+{{end}}
+    
+{{ with .Site.Params.favicon }}
+    <link rel="shortcut icon" href="/{{.}}">
+{{ end }}
+
+    <meta charset="utf-8">
+
+{{with .Site.Params.description}}
+    <meta name="description" content="{{.}}">
+{{end}}
+
+{{ with .Site.Params.author }}
+    <meta name="author" content="{{.}}">
+{{end}}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+{{ $fonts := resources.Get "css/fonts.css" }}
+{{ $fontsAwesome := resources.Get "css/fontawesome.min.css" }}
+{{ $normalize := resources.Get "css/normalize.css" }}
+{{ $grid := resources.Get "css/grid.css" }}
+{{ $sfedov := resources.Get "css/sfedov.css" }}
+
+{{ if not (and $fonts $fontsAwesome $normalize $grid $sfedov) }}
+{{ errorf "Resource not found" }}
+{{ end }}
+
+{{ $style := slice $fonts $fontsAwesome $normalize $grid $sfedov | resources.Concat "css/bundle.css" | minify | fingerprint }}
+
+<link rel="stylesheet"
+      href="{{ $style.RelPermalink }}"
+      integrity="{{ $style.Data.Integrity }}">
+    
+</head>

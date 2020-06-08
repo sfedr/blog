@@ -1,0 +1,14 @@
+name = "SF"
+license = "MIT"
+licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
+description = "A Hugo theme focused on creating a personal page, with a bio, projects summary and a blog."
+homepage = "http://sfedov.com/"
+tags = ["blog", "theme", "portfolio", "google", "analytics", "responsive", "mobile"]
+features = []
+min_version = "0.41.0"
+
+staticDir = "assets"
+
+[author]
+  name = "Sergey Fedorov"
+  homepage = "https://sfedov.com"
