@@ -1,0 +1,56 @@
+baseURL = "https://sfedov.com/"
+# include content marked as draft
+buildDrafts = false
+# include content with publishdate in the future
+buildFuture = false
+# include content already expired
+buildExpired = false
+# enable this to make all relative URLs relative to content root. Note that this does not affect absolute URLs.
+relativeURLs = true
+disableRSS = true
+enableRobotsTXT = true
+
+theme = "sf"
+DefaultContentLanguage = "en"
+staticDir = "assets"
+googleAnalytics = "UA-168653586-1"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[permalinks]
+    fixed = ":title/"
+    posts = "posts/:slug/"
+
+[params]
+    avatar = "/img/avatar.jpeg"
+    favicon = "img/favicon.ico"
+    email = "sfedrv@gmail.com"
+    [params.contact]
+        linkedin = "https://www.linkedin.com/in/sfedov/"
+        twitter = "https://twitter.com/sfedov"
+        github = "https://github.com/sfedr"
+        instagram = "https://instagram.com/didnothappen"
+        facebook = "https://www.facebook.com/sergey.y.fedorov"
+
+
+[languages]
+    [languages.en]
+        title = "Sergey Fedorov · Home Page"
+        [languages.en.params]
+            author = "Sergey Fedorov"
+            description = "Sergey Fedorov"
+            bio = "Making the Internet faster.  \nNow: Director of Engineering at Netflix."
+            error404 = "You missed a turn somewhere - there is nothing here."
+            notFound = "Page not found"
+
+
+    [languages.ru]
+        title = "Сергей Федоров"
+        [languages.ru.params]
+            author = "Сергей Федоров"
+            email = "sfedrv@gmail.com"
+            description = "Сергей Федоров"
+            bio = "Ускоряю Интернет.  \n Сейчас: Директор по разработке в Нетфликс."
+            error404 = "Куда-то не туда попали - здесь ничего нет."
+            notFound = "Страница не найдена"

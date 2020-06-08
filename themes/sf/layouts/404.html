@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+{{if .Site.Language}}
+<html lang="{{.Site.Language}}">
+{{else}}
+<html lang="en">
+{{end}}
+
+    {{ partial "head" (dict "Site" .Site "title" .Site.Params.notFound) }}
+    
+    <div class="home-container not-found centered">
+        <div role="main">
+            <div>
+                <h1>{{ "**404**" | markdownify }}</h1>
+                {{ with .Site.Params.error404 }}
+                <h2 aria-label="{{ . | markdownify }}">{{ "---" | markdownify }}{{ . | markdownify }}</h2>
+                {{ else }}
+                <h2 aria-label="{{ "There is no such page." | markdownify }}">{{ "---" | markdownify }}{{ "There is no such page." | markdownify}}</h2>
+                {{ end }}
+            </div>
+        </div>
+  </div>
+</html>
